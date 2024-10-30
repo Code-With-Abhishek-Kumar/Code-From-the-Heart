@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+nav{
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: black;
+    color: white;
+}
+
+nav button{
+    background-color: purple;
+    padding: 12px 12px;
+    border: none;
+    margin-right: 5vw;
+    border-radius: 12px;
+    color: white;
+
+}
+
+.form-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+
+.form-container form{ 
+ display: flex;
+ padding: 90px 15px;
+ gap: 12px;
+ border-radius: 35px;
+ flex-direction: column;
+    width: 40vw;
+    height: 50vh;
+    background-color: black;
+}
+
+
+.form-container form input{ 
+    padding: 12px 12px;
+    border-radius: 12px;
+   }
+
+
+   .form-container form textarea{ 
+   height: 18vh;
+   text-transform: capitalize;
+   width: 100%;
+   }
+
+
+   .form-container form button{ 
+  
+    padding: 12px 12px;
+    border-radius: 12px;
+    }
