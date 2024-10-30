@@ -36,15 +36,29 @@ app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 
 
+// 1. Request
+// Req (Request): Jab ek client (jaise ki browser ya mobile app) server se kuch data ya information maangta hai, tab wo request bhejta hai. Isme specify hota hai ki client kya chahta hai, jaise ki kisi webpage ka content, kisi database se information, ya kisi API se data.
+
+
+// Example 
+// Aap apne browser mein URL type karte hain, jaise www.onlinestore.com/products.
+// Is waqt, aapka browser server ko ek HTTP GET request bhejta hai, jo yeh keh raha hai ki "Mujhe products ki list chahiye."
 
 
 
+// 2. Response
+// Res (Response): Jab server us request ko receive karta hai, to wo ek response bhejta hai. Ye response client ko batata hai ki request ka kya result hai. Isme data, status code (jisse pata chalta hai ki request successful thi ya nahi), aur kabhi-kabhi error messages bhi hote hain.
 
 
+// Server request ko receive karta hai, process karta hai, aur products ki list ko aapke browser ko bhejta hai.
+// Ye response mein hota hai HTML, CSS, aur JavaScript ka code, jisse aapko webpage dikhai deta hai.
+// Iske sath hi, server ek status code bhejta hai, jaise 200 (jo batata hai ki request successful thi).
+
+// res.json({}) ye line User k req ka Response de raha hain usko  Json main Data send kr k
 
 app.get('/', function(req, res) {
     // res.send('hi')
-    
+   
     res.render('index'); // Renders the 'index' view
 });
 
