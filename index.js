@@ -1,5 +1,5 @@
 import express, { urlencoded } from 'express';
-
+import ContactSchema from './model/contactSchema.js'
 // hm logo yaha Express ko app Variable main Store kr diye hain jis se Express ka sara power App Variable ko mil gya hain
 // app wo Sub ko Kuch kr skta hain jo express kr skta hain
 
@@ -145,14 +145,23 @@ console.log('hello bhai kese ho')
 
 
 
-app.post('/create', function(req, res) {
+app.post('/create', async function(req, res) {
 // Jab user form fill karke submit karta hai, toh yeh data request body mein chala jata hai, jise hum Express.js mein req.body se access kar sakte hain.
-    let {name , email , message} = req.body
+    let {name , emailId , message} = req.body
     console.log('name' , name)
-    console.log('email' , email)
+    console.log('email' , emailId)
     console.log('message' , message)
 
-
+    
+   let Created_Document = await ContactSchema.create({
+        name,
+        emailId, 
+        message,
+    })
+    console.log(Created_Document)
+    res.json({
+        data: Created_Document,
+    })
     res.end(); // Ends the response 
 });
 
